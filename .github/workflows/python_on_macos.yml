@@ -9,9 +9,13 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
-      - run: python --version || true
-      - run: python2 --version || true
-      - run: python3 --version || true
-      - run: python2 -m pip install --upgrade pip || true
-      - run: python3 -m pip install --upgrade pip || true
+      - run: |
+          python --version
+          python2 --version
+          python3 --version
+          python2 -m pip install --upgrade pip
+          python3 -m pip install --upgrade pip
+      - run: |
+          python2 -m pip install flake8
+          flake8 --version
                  
