@@ -1,10 +1,10 @@
 name: python_on_macos
 on: [pull_request, push]
-strategy:
-  matrix:
-    os: [macos-10, macos-11, macos-latest]
 jobs:
   python_on_macos:
+    strategy:
+      matrix:
+        os: [macos-10, macos-11, macos-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
