@@ -1,0 +1,16 @@
+name: python_on_macos
+on: [pull_request, push]
+strategy:
+  matrix:
+    os: [macos-10, macos-11, macos-latest]
+jobs:
+  python_on_macos:
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - run: python --version || true
+      - run: python2 --version || true
+      - run: python3 --version || true
+      - run: python2 -m pip install --upgrade pip || true
+      - run: python3 -m pip install --upgrade pip || true
+                 
