@@ -17,5 +17,5 @@ jobs:
           python3 -m pip install --upgrade pip
       - run: |
           python2 -m pip install flake8
-          flake8 --version
+          python2 -m flake8 --version
                  
